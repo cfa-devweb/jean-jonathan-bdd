@@ -29,7 +29,7 @@ drop table if exists publishers ;
 create table publishers
 (
     id int primary key auto_increment not null,
-    Name varchar(25)  unique
+    Name varchar(25) unique
 );
 
 drop table if exists authors ;
@@ -37,8 +37,7 @@ drop table if exists authors ;
 create table authors
 (
     id int primary key auto_increment not null,
-    FirstName varchar(25),
-    LastName varchar(25),
+    Name varchar(30),
     Birthday date not null
 );
 
