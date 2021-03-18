@@ -6,58 +6,59 @@ Use library;
 
 drop table if exists clients;
 
-create table clients 
+create table clients
 (
     id int primary key auto_increment not null,
     FirstName varchar(25) not null,
     LastName varchar(25) not null,
     Birthday date,
-    Phone varchar (10) not null unique,
-    Mail varchar (40) not null unique
+    Phone varchar(10) not null unique,
+    Mail varchar(40) not null unique
 );
 
 drop table if exists genres;
 
-create table genres 
+create table genres
 (
     id int primary key auto_increment not null,
-    Name varchar (25) not null unique
+    Name varchar(25) not null unique
 );
 
-drop table if exists authors;
+drop table if exists publishers ;
 
-create table authors 
+create table publishers
 (
     id int primary key auto_increment not null,
-    FirstName varchar (25),
+    Name varchar(25)  unique
+);
+
+drop table if exists authors ;
+
+create table authors
+(
+    id int primary key auto_increment not null,
+    FirstName varchar(25),
     LastName varchar(25),
     Birthday date not null
 );
 
-drop table if exists publishers;
+drop table if exists books;
 
-create table publishers 
-(
-    id int primary key auto_increment not null,
-    Name varchar (25) not null unique
-);
-
-drop table if exists books ;
-
-create table books 
+create table books
 (
     id int primary key auto_increment not null,
     Title varchar(75) not null unique,
-    PageNumber int(4),
+    Height int(4),
     Genre int default null,
     Publisher int default null,
     Author int default null,
     constraint books_genres_id foreign key (Genre) references genres (id) on delete cascade,
     constraint books_publishers_id foreign key (Publisher) references publishers (id) on delete cascade,
     constraint books_authors_id foreign key (Author) references authors (id) on delete cascade
-)engine=InnoDB default charset=utf8 collate=utf8_general_ci;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-drop table if exists registrations; 
+
+drop table if exists registrations;
 
 create table registrations
 (
@@ -68,4 +69,10 @@ create table registrations
     client int default null,
     constraint registrations_books_id foreign key (Book) references books (id) on delete cascade,
     constraint registrations_clients_id foreign key (Client) references clients (id) on delete cascade
-)engine=InnoDB default charset=utf8 collate=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+
+
+
+
