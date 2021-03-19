@@ -17,3 +17,11 @@ Grace au MCD nous avons créer un fichier SQL pour notre model physique des donn
 par rapport a notre MCD quand au nommage de nos colonnes.Chose qui s'est avéré encore plus véridict lors de la création de nos script de créations et d'insertions.
 
 ### Les Scripts
+
+Le script de creation : Il n'y a pas eu grand problème de ce coté la, a l'exception de quelque problème technique.
+
+Le script d'insertion : C'est a partir de ce moment que nous avons réaliser que les recherches sont importantes. Après plusieurs heures de recherches et
+d'avoir tenter de parse le .csv nous nous somme rendu a l'évidence que pour rendre le projet dans les temps il nous fallait revoir le fichier sql de création 
+de la base ( ce qui nous a pris a peine 10min)
+
+le script de sauvegarde et le script de restauration
